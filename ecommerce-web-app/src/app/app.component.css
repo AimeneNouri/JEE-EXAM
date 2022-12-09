@@ -1,0 +1,24 @@
+.nav {
+    background: #631CD6;
+    color: #fff;
+}
+
+.nav > div {
+    margin-right: 2rem;
+}
+
+.menu-nav {
+
+}
+
+.menu-nav a {
+    font-size: 16px;
+    padding-right: 1rem;
+    color: #dedede;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-nav a:hover {
+    color: #fff;
+}
