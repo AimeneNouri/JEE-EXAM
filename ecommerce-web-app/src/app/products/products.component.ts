@@ -9,17 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
   
   products: any;
-  displayedColumns : string[] = ['id', 'name', 'price', 'quantity'];
 
   constructor(private http:HttpClient) {}
   
   ngOnInit(): void {
+    /* Making a call to the product service to get the list of products. */
     this.http.get("http://localhost:8888/PRODUCT-SERVICE/products?projection=fullProduct").subscribe({
       next : (data) => {
         this.products = data;
       },
       error : (err) => {}
     });
-    
   }
 }

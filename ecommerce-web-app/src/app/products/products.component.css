@@ -1,15 +1,9 @@
 .container {
-  color: black;
-  margin-top: 10rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 2rem;
 }
 
 table {
   width: 100%;
   background: #fff;
   border-radius: 10px
-  
 }
