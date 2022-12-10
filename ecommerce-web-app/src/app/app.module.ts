@@ -9,11 +9,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomersComponent } from './customers/customers.component';
+import { BillsComponent } from './bills/bills.component';
+import { BillsDetailsComponent } from './bills-details/bills-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    CustomersComponent,
+    BillsComponent,
+    BillsDetailsComponent,
   ],
   imports: [
     BrowserModule,
