@@ -1,23 +1,27 @@
 package aimene.nouri.billingservice.entities;
 
+import aimene.nouri.billingservice.enums.BillStatus;
 import aimene.nouri.billingservice.models.Customer;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 
-@Entity @AllArgsConstructor @NoArgsConstructor @Data @ToString
+@Entity @AllArgsConstructor @NoArgsConstructor @Data @ToString @Builder
 public class Bill {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date billingDate;
+    private BillStatus status;
     @OneToMany(mappedBy = "bill")
     private Collection<ProductItem> productItems;
     private long customerID;
     @Transient
     private Customer customer;
+
+    public double getTotal(){
+        return productItems.stream()
+                .mapToDouble(ProductItem::getTotal).sum();
+    }
 }
